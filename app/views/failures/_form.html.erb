@@ -1,0 +1,28 @@
+<%= form_with(model: failure, local: true) do |form| %>
+  <% if failure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(failure.errors.count, "error") %> prohibited this failure from being saved:</h2>
+
+      <ul>
+      <% failure.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :type %>
+    <%= form.select :kind, ['Pushup', 'Situp', 'Jumping', 'Squat']%>
+    <!-- <%= form.text_area :type, id: :failure_type %> -->
+  </div>
+
+  <div class="field">
+    <%= form.label :count %>
+    <%= form.number_field :count, id: :failure_count %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

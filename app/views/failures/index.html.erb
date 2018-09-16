@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Failures</h1>
+
+<h1>Pushup Record: <%= @pushup_record.count %> on <%= @pushup_record.created_at %></h1>
+<h1>Situp Record: <%= @situp_record.count %> on <%= @situp_record.created_at %></h1>
+<h1>Jumping Jack Record: <%= @jump_record.count %> on <%= @jump_record.created_at %></h1>
+<h1>Squat Record: <%= @squat_record.count %> on <%= @squat_record.created_at %></h1>
+
+
+<br>
+
+<%= link_to 'New Failure', new_failure_path %>

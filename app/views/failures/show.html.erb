@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @failure.kind %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @failure.count %>
+</p>
+
+<%= link_to 'Edit', edit_failure_path(@failure) %> |
+<%= link_to 'Back', failures_path %>
