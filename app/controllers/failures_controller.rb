@@ -4,10 +4,10 @@ class FailuresController < ApplicationController
   # GET /failures
   def index
     # @failures = Failure.all
-    @pushup_record = Failure.where(kind: "Pushup").order(:count).last
-    @situp_record = Failure.where(kind: "Situp").order(:count).last
-    @jump_record = Failure.where(kind: "Jumping").order(:count).last
-    @squat_record = Failure.where(kind: "Squat").order(:count).last
+    @pushup_record = Failure.where(kind: "Pushups").order(:count).last
+    @situp_record = Failure.where(kind: "Situps").order(:count).last
+    @jump_record = Failure.where(kind: "Jumping Jacks").order(:count).last
+    @squat_record = Failure.where(kind: "Squats").order(:count).last
   end
 
   # GET /failures/1
