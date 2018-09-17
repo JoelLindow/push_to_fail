@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>PushToFail</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>PushToFail</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <!-- Milligram Frontend Framework -->
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+  <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+</head>
+
+<body>
+  <nav class="navigation">
+    <section class="container">
+      <a href="/index">Top Records</a>
+      <a href="/new">New Record</a>
+    </section>
+  </nav>
+  <%= yield %>
+</body>
 </html>

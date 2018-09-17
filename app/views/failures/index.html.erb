@@ -1,13 +1,46 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Failures</h1>
 
-<h1>Pushup Record: <%= @pushup_record.count %> on <%= @pushup_record.created_at.strftime('%B %d %Y') %></h1>
-<h1>Situp Record: <%= @situp_record.count %> on <%= @situp_record.created_at.strftime('%B %d %Y')%></h1>
-<h1>Jumping Jack Record: <%= @jump_record.count %> on <%= @jump_record.created_at.strftime('%B %d %Y') %></h1>
-<h1>Squat Record: <%= @squat_record.count %> on <%= @squat_record.created_at.strftime('%B %d %Y') %></h1>
-
+<section class="container">
+  <h1>Failure Records</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Record</th>
+      <th>Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Pushup Record: </th>
+      <th><%= @pushup_record.count %></th>
+      <th><%= @pushup_record.created_at.strftime('%B %d %Y') %></th>
+      <th><a href="#">All Records</a></th>
+    </tr>
+    <tr>
+      <th>Situp Record:</th>
+      <th><%= @situp_record.count %></th>
+      <th><%= @situp_record.created_at.strftime('%B %d %Y')%></th>
+      <th><a href="#">All Records</a></th>
+    </tr>
+    <tr>
+      <th>Jumping Jack Record: </th>
+      <th><%= @jump_record.count %></th>
+      <th><%= @jump_record.created_at.strftime('%B %d %Y') %></th>
+      <th><a href="#">All Records</a></th>
+    </tr>
+    <tr>
+      <th>Squat Record: </th>
+      <th><%= @squat_record.count %> </th>
+      <th><%= @squat_record.created_at.strftime('%B %d %Y') %></th>
+      <th><a href="#">All Records</a></th>
+    </tr>
+  </tbody>
+</table>
+</section>
 
 <br>
 
-<%= link_to 'New Failure', new_failure_path %>
+<!-- <%= link_to 'New Failure', new_failure_path %> -->
