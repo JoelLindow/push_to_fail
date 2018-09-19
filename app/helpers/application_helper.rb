@@ -1,3 +1,3 @@
 module ApplicationHelper
-  # require 'time'
+  require 'time'
 end
