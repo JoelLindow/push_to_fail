@@ -15,7 +15,13 @@
  */
 
 .nav-button {
-  font-size: 24px;
+  font-size: 30px;
+  margin-right: 20px;
+}
+.nav-logo {
+  height: 30px;
+  margin-right: 24px;
+  margin-bottom: -5px;
 }
 .center-text {
   text-align: center;

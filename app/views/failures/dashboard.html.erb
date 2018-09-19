@@ -3,43 +3,32 @@
 <% end %>
 <h1 class="center-text">Failure Top Records</h1>
 <section class="container">
-<table>
-  <thead>
-    <tr style="background-color: orange; color: white;">
-      <th>Category</th>
-      <th>Record</th>
-      <th>Date</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Pushup Record: </th>
-      <th><%= @pushup_record.count %></th>
-      <th><%= @pushup_record.created_at.getlocal.strftime('%B %d %Y') %></th>
+  <div class="row">
+    <div class="column center-text">
+      <h3>Pushups <br>Record</h3>
+      <h1><%= @pushup_record.count %></h1>
+      <h5><%= @pushup_record.created_at.getlocal.strftime('%B %d %Y') %></h5>
       <th><%= link_to "All Pushup Records", failures_path(:kind => "Pushups") %></th>
-    </tr>
-    <tr>
-      <th>Situp Record:</th>
-      <th><%= @situp_record.count %></th>
-      <th><%= @situp_record.created_at.getlocal.strftime('%B %d %Y')%></th>
+    </div>
+    <div class="column center-text">
+      <h3>Situps <br>Record</h3>
+      <h1><%= @situp_record.count %></h1>
+      <h5><%= @situp_record.created_at.getlocal.strftime('%B %d %Y')%></h5>
       <th><%= link_to "All Situp Records", failures_path(:kind => "Situps") %></th>
-
-    </tr>
-    <tr>
-      <th>Jumping Jack Record: </th>
-      <th><%= @jump_record.count %></th>
-      <th><%= @jump_record.created_at.getlocal.strftime('%B %d %Y') %></th>
+    </div>
+    <div class="column center-text">
+      <h3>Jumping Jack <br>Record</h3>
+      <h1><%= @jump_record.count %></h1>
+      <h5><%= @jump_record.created_at.getlocal.strftime('%B %d %Y') %></h5>
       <th><%= link_to "All Jumping Jack Records", failures_path(:kind => "Jumping Jacks") %></th>
-    </tr>
-    <tr>
-      <th>Squat Record: </th>
-      <th><%= @squat_record.count %> </th>
-      <th><%= @squat_record.created_at.getlocal.strftime('%B %d %Y') %></th>
+    </div>
+    <div class="column center-text">
+      <h3>Squats <br>Record</h3>
+      <h1><%= @squat_record.count %> </h1>
+      <h5><%= @squat_record.created_at.getlocal.strftime('%B %d %Y') %></h5>
       <th><%= link_to "All Squats Records", failures_path(:kind => "Squats") %></th>
-    </tr>
-  </tbody>
-</table>
+    </div>
+  </div>
 </section>
 
 <br>
