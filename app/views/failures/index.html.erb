@@ -1,43 +1,35 @@
-<h1 class="center-text">Failure Records</h1>
+<% if @kind != nil %>
+<h1 class="center-text"><%= @kind + " Records" %></h1>
+<% else %>
+<h1 class="center-text"><%= "All Failure Records" %></h1>
+<% end %>
+
 <section class="container">
 <table>
   <thead>
     <tr style="background-color: orange; color: white;">
-      <th>Category</th>
-      <th>Record</th>
+      <th>Type</th>
+      <th>Count</th>
       <th>Date</th>
-      <th></th>
+      <th colspan="3"></th>
     </tr>
   </thead>
+
   <tbody>
-    <tr>
-      <th>Pushup Record: </th>
-      <th><%= @pushup_record.count %></th>
-      <th><%= @pushup_record.created_at.strftime('%B %d %Y') %></th>
-      <th><a href="/">All Records</a></th>
-    </tr>
-    <tr>
-      <th>Situp Record:</th>
-      <th><%= @situp_record.count %></th>
-      <th><%= @situp_record.created_at.strftime('%B %d %Y')%></th>
-      <th><a href="/">All Records</a></th>
-    </tr>
-    <tr>
-      <th>Jumping Jack Record: </th>
-      <th><%= @jump_record.count %></th>
-      <th><%= @jump_record.created_at.strftime('%B %d %Y') %></th>
-      <th><a href="/">All Records</a></th>
-    </tr>
-    <tr>
-      <th>Squat Record: </th>
-      <th><%= @squat_record.count %> </th>
-      <th><%= @squat_record.created_at.strftime('%B %d %Y') %></th>
-      <th><a href="/">All Records</a></th>
-    </tr>
+    <% @failures.each do |failure| %>
+      <tr>
+        <td><%= failure.kind %></td>
+        <td><%= failure.count %></td>
+        <td><%= failure.created_at.getlocal.strftime('%B %d %Y') %></td>
+        <!-- <td><%= link_to 'Show', failure %></td> -->
+        <!-- <td><%= link_to 'Edit', edit_failure_path(failure) %></td> -->
+        <!-- <td><%= link_to 'Destroy', failure, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      </tr>
+    <% end %>
   </tbody>
 </table>
-</section>
 
 <br>
 
 <!-- <%= link_to 'New Failure', new_failure_path %> -->
+</section>

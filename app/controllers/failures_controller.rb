@@ -2,7 +2,7 @@ class FailuresController < ApplicationController
   before_action :set_failure, only: [:show, :edit, :update, :destroy]
 
   # GET /failures
-  def index
+  def dashboard
     # @failures = Failure.all
     @pushup_record = Failure.where(kind: "Pushups").order(:count).last
     @situp_record = Failure.where(kind: "Situps").order(:count).last
@@ -10,6 +10,15 @@ class FailuresController < ApplicationController
     @squat_record = Failure.where(kind: "Squats").order(:count).last
   end
 
+  def index
+    # binding.pry
+    if params["kind"]
+      @failures = Failure.where(kind: params["kind"]).order(count: :desc)
+      @kind = params["kind"]
+    else
+      @failures = Failure.all.order(count: :desc)
+    end
+  end
   # GET /failures/1
   def show
   end
@@ -28,7 +37,8 @@ class FailuresController < ApplicationController
     @failure = Failure.new(failure_params)
 
     if @failure.save
-      redirect_to @failure, notice: 'Failure was successfully created.'
+      redirect_to root_path, notice: 'Failure Record was successfully created.'
+      binding.pry
     else
       render :new
     end
@@ -50,13 +60,13 @@ class FailuresController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_failure
-      @failure = Failure.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_failure
+    @failure = Failure.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def failure_params
-      params.require(:failure).permit(:kind, :count)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def failure_params
+    params.require(:failure).permit(:kind, :count)
+  end
 end
