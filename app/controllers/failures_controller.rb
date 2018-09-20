@@ -38,7 +38,6 @@ class FailuresController < ApplicationController
 
     if @failure.save
       redirect_to root_path, notice: 'Failure Record was successfully created.'
-      # binding.pry
     else
       render :new
     end
