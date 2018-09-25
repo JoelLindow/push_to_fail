@@ -12,36 +12,41 @@
   <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
   <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
 </head>
-
 <body>
-  <% if current_user %>
-  <!-- current_user will return true if a user is logged in -->
-  <%= "Logged in as #{current_user.email}" %> | <%= link_to 'Home', root_path %> | <%= link_to 'Log Out', logout_path, method: :delete %>
-  <% else %>
-  <!-- not logged in -->
-  <%= link_to 'Home', root_path %> | <%= link_to 'Log In', login_path %> or <%= link_to 'Sign Up', new_user_path %>
-  <% end %>
-
-
-
   <nav class="navigation" style="background-color: orange;">
     <section class="container">
-      <a href="/top_failures"  class="nav-button">PUSH-TO-FAIL<img src="https://mbtskoudsalg.com/images/fail-png-6.png" class="nav-logo" alt=""></a>
+      <a href="/top_failures"  class="nav-button center-text">PUSH-TO-FAIL<img src="https://mbtskoudsalg.com/images/fail-png-6.png" class="nav-logo" alt=""></a>
+      <ul class="navigation-list float-right">
+        <% if current_user %>
+        <!-- current_user will return true if a user is logged in -->
+        <%= "Logged in as #{current_user.email}" %> | <%= link_to 'Log Out', logout_path, method: :delete %>
+        <% else %>
+        <!-- not logged in -->
+        <%= link_to 'Log In', login_path %> or <%= link_to 'Sign Up', new_user_path %>
+        <% end %>
+
+      </ul>
+
+      <br>
       <a href="/top_failures" class="nav-button"><strong>Top Records</strong></a>
       <a href="/failures" class="nav-button"><strong>All Failures</strong></a>
       <% if current_user %>
-
       <a href="/failures/new" class="nav-button"><strong>New Record</strong></a>
       <% end %>
     </section>
   </nav>
-  <% if notice %>
-  <%= notice %>
-  <% end %>
+  <section class="container">
 
-  <% if alert %>
-  <%= alert %>
-  <% end %>
+    <% if notice %>
+    <br>
+    <%= notice %>
+    <% end %>
+
+    <% if alert %>
+    <br>
+    <%= alert %>
+    <% end %>
+  </section>
   <%= yield %>
 </body>
 </html>
