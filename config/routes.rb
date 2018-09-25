@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  root to: 'failures#dashboard'
-  resources :failures, only: [:index, :new]
+  root to: 'users#index'
 
+  resources :failures, only: [:index, :new, :create]
+  get '/top_failures' => 'failures#dashboard'
   # sign up page with form:
   get 'users/new' => 'users#new', as: :new_user
   # create (post) action for when sign up form is submitted:

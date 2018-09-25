@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
 
+  def index
+    if current_user
+      redirect_to top_failures_path
+    end
+  end
+
   def new
     @user = User.new
   end
@@ -29,5 +35,5 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
-  
+
 end
