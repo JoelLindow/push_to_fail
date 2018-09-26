@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
 
+  def dashboard
+    #This should show user personal records as well as last 20 workouts
+    #should also have link to ALL workouts page
+  end
+
   def index
-    if current_user
-      redirect_to top_failures_path
-    end
+    #This should be a table of ALL user workout records for the current_user
   end
 
   def new
