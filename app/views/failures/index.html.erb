@@ -24,7 +24,9 @@
       <tr>
         <td><%= failure.kind %></td>
         <td><%= failure.count %></td>
-        <% if failure.user.id == current_user.id %>
+        <% if current_user == nil %>
+        <td><%= failure.user.name %></td>
+        <% elsif failure.user.id == current_user.id %>
         <td style="color:red;"><strong> <%= failure.user.name %> </strong></td>
         <% else %>
         <td><%= failure.user.name %></td>
