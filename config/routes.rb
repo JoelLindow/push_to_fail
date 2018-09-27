@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get '/top_failures' => 'failures#dashboard'
 
-  get '/all_failures' => 'failures#index'
+  get '/recent_failures' => 'failures#index'
 
   get '/your_top_scores' => 'users#dashboard'
 
