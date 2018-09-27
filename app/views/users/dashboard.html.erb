@@ -14,25 +14,25 @@
       <th>Pushup Record: </th>
       <th><%= @pushup_record.count %></th>
       <th><%= @pushup_record.created_at.getlocal.strftime('%B %d %Y') %></th>
-      <th><%= link_to "All Pushup Records", failures_path(:kind => "Pushups") %></th>
+      <th><%= link_to "Community Pushup Records", failures_path(:kind => "Pushups") %></th>
     </tr>
     <tr>
       <th>Situp Record:</th>
       <th><%= @situp_record.count %></th>
       <th><%= @situp_record.created_at.getlocal.strftime('%B %d %Y')%></th>
-      <th><%= link_to "All Situp Records", failures_path(:kind => "Situps") %></th>
+      <th><%= link_to "Community Situp Records", failures_path(:kind => "Situps") %></th>
     </tr>
     <tr>
       <th>Jumping Jack Record: </th>
       <th><%= @jump_record.count %></th>
       <th><%= @jump_record.created_at.getlocal.strftime('%B %d %Y') %></th>
-      <th><%= link_to "All Jumping Jack Records", failures_path(:kind => "Jumping Jacks") %></th>
+      <th><%= link_to "Community Jumping Jack Records", failures_path(:kind => "Jumping Jacks") %></th>
     </tr>
     <tr>
       <th>Squat Record: </th>
       <th><%= @squat_record.count %> </th>
       <th><%= @squat_record.created_at.getlocal.strftime('%B %d %Y') %></th>
-      <th><%= link_to "All Squats Records", failures_path(:kind => "Squats") %></th>
+      <th><%= link_to "Community Squats Records", failures_path(:kind => "Squats") %></th>
     </tr>
   </tbody>
 </table>

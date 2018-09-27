@@ -9,18 +9,19 @@
 <% end %>
 
 <section class="container">
-<table>
-  <thead>
-    <tr style="background-color: orange; color: white;">
-      <th>Type</th>
-      <th>Count</th>
-      <th>User</th>
-      <th>Date</th>
-    </tr>
-  </thead>
+  <table>
+    <thead>
+      <tr style="background-color: orange; color: white;">
+        <th>Type</th>
+        <th>Count</th>
+        <th>User</th>
+        <th>Date</th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <% @failures.each do |failure| %>
+    <tbody>
+      <% @failures.each do |failure| %>
+      <% if failure.count > 0 %>
       <tr>
         <td><%= failure.kind %></td>
         <td><%= failure.count %></td>
@@ -31,14 +32,14 @@
         <% else %>
         <td><%= failure.user.name %></td>
         <% end %>
-
         <td><%= failure.created_at.getlocal.strftime('%B %d %Y') %></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      <% end %>
+      <% end %>
+    </tbody>
+  </table>
 
-<br>
+  <br>
 
-<!-- <%= link_to 'New Failure', new_failure_path %> -->
+  <!-- <%= link_to 'New Failure', new_failure_path %> -->
 </section>

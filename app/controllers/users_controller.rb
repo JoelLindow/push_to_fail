@@ -25,6 +25,11 @@ class UsersController < ApplicationController
     @user.email.downcase!
 
     if @user.save
+      # User accessible views (your dashboard and your records) will throw errors if there isn't initial information in each category
+      Failure.create(kind: "Pushups", count:0, user_id: @user.id)
+      Failure.create(kind: "Situps", count:0, user_id: @user.id)
+      Failure.create(kind: "Jumping Jacks", count:0, user_id: @user.id)
+      Failure.create(kind: "Squats", count:0, user_id: @user.id)
       # If user saves in the db successfully:
       flash[:notice] = "Account created successfully!"
       redirect_to root_path

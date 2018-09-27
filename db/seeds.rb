@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create(name: "Test User 1", email: "test1@test.com", password: "test")
-User.create(name: "Test User 2", email: "test2@test.com", password: "test")
-User.create(name: "Test User 3", email: "test3@test.com", password: "test")
+User.create(name: "Bobby Weakling", email: "test1@test.com", password: "test")
+User.create(name: "Susie Weakling", email: "test2@test.com", password: "test")
+User.create(name: "Big Troy", email: "test3@test.com", password: "test")
 
 5.times do
 #user1

@@ -13,8 +13,6 @@
         <% @pushup_records.each do |x| %>
         <tr>
           <td class="center-text"><strong> <%= x.count %> </strong></td>
-          <% #binding.pry %>
-
           <% if current_user == nil %>
           <td><%= x.user.name %></td>
           <% elsif x.user.id == current_user.id %>
