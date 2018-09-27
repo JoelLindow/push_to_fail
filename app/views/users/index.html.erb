@@ -1,12 +1,4 @@
-<!-- This is a complete record history for current user -->
-
-
-<% if @kind != nil %>
-<h1 class="center-text"><%= @kind + " Records" %></h1>
-
-<% else %>
-<h1 class="center-text"><%= "All Failure Records" %></h1>
-<% end %>
+<h1 class="center-text">YOUR FAILURE SCORE HISTORY</h1>
 
 <section class="container">
 <table>
@@ -14,7 +6,6 @@
     <tr style="background-color: orange; color: white;">
       <th>Type</th>
       <th>Count</th>
-      <th>User</th>
       <th>Date</th>
     </tr>
   </thead>
@@ -24,12 +15,6 @@
       <tr>
         <td><%= failure.kind %></td>
         <td><%= failure.count %></td>
-        <% if failure.user.id == current_user.id %>
-        <td style="color:red;"><strong> <%= failure.user.name %> </strong></td>
-        <% else %>
-        <td><%= failure.user.name %></td>
-        <% end %>
-
         <td><%= failure.created_at.getlocal.strftime('%B %d %Y') %></td>
       </tr>
     <% end %>

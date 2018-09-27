@@ -3,10 +3,15 @@ class UsersController < ApplicationController
   def dashboard
     #This should show user personal records as well as last 20 workouts
     #should also have link to ALL workouts page
+    @pushup_record = Failure.where(kind: "Pushups", user_id: current_user.id).order(:count).last
+    @situp_record = Failure.where(kind: "Situps", user_id: current_user.id).order(:count).last
+    @jump_record = Failure.where(kind: "Jumping Jacks", user_id: current_user.id).order(:count).last
+    @squat_record = Failure.where(kind: "Squats", user_id: current_user.id).order(:count).last
   end
 
   def index
     #This should be a table of ALL user workout records for the current_user
+    @failures = Failure.where(user_id: current_user.id)
   end
 
   def new

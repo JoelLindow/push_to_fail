@@ -8,10 +8,10 @@ class FailuresController < ApplicationController
 
   def dashboard
     # THIS IS FOR ALL USER FAILURES TOP SCORE PAGE /failures/index.html.erb
-    @pushup_records = Failure.where(kind: "Pushups").order(:count).last(10)
-    @situp_records = Failure.where(kind: "Situps").order(:count).last(10)
-    @jump_records = Failure.where(kind: "Jumping Jacks").order(:count).last(10)
-    @squat_records = Failure.where(kind: "Squats").order(:count).last(10)
+    @pushup_records = Failure.where(kind: "Pushups").order(count: :desc).last(10)
+    @situp_records = Failure.where(kind: "Situps").order(count: :desc).last(10)
+    @jump_records = Failure.where(kind: "Jumping Jacks").order(count: :desc).last(10)
+    @squat_records = Failure.where(kind: "Squats").order(count: :desc).last(10)
   end
 
   def index
@@ -19,7 +19,7 @@ class FailuresController < ApplicationController
       @failures = Failure.where(kind: params["kind"]).order(count: :desc)
       @kind = params["kind"]
     else
-      @failures = Failure.all.order(count: :desc)
+      @failures = Failure.all.order(id: :desc)
     end
   end
 

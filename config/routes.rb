@@ -4,9 +4,15 @@ Rails.application.routes.draw do
   resources :failures, only: [:index, :new, :create]
   get '/about' => 'failures#about'
 
-  get '/your_top_scores' => 'users#dashboard'
-  
   get '/top_failures' => 'failures#dashboard'
+
+  get '/all_failures' => 'failures#index'
+
+  get '/your_top_scores' => 'users#dashboard'
+
+  get '/your_failures' => 'users#index'
+
+
   # sign up page with form:
   get 'users/new' => 'users#new', as: :new_user
   # create (post) action for when sign up form is submitted:
