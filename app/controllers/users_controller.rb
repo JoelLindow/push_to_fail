@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def index
     #This should be a table of ALL user workout records for the current_user
-    @failures = Failure.where(user_id: current_user.id)
+    @failures = Failure.where(user_id: current_user.id).order(count: :desc)
   end
 
   def new

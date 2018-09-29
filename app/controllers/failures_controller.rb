@@ -8,10 +8,10 @@ class FailuresController < ApplicationController
 
   def dashboard
     # THIS IS FOR ALL USER FAILURES TOP SCORE PAGE /failures/index.html.erb
-    @pushup_records = Failure.where(kind: "Pushups").order(count: :desc).last(10)
-    @situp_records = Failure.where(kind: "Situps").order(count: :desc).last(10)
-    @jump_records = Failure.where(kind: "Jumping Jacks").order(count: :desc).last(10)
-    @squat_records = Failure.where(kind: "Squats").order(count: :desc).last(10)
+    @pushup_records = Failure.where(kind: "Pushups").order(count: :desc).first(15)
+    @situp_records = Failure.where(kind: "Situps").order(count: :desc).first(15)
+    @jump_records = Failure.where(kind: "Jumping Jacks").order(count: :desc).first(15)
+    @squat_records = Failure.where(kind: "Squats").order(count: :desc).first(15)
   end
 
   def index
@@ -53,6 +53,6 @@ class FailuresController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def failure_params
-    params.require(:failure).permit(:kind, :count)
+    params.require(:failure).permit(:kind, :count, :user_id)
   end
 end
