@@ -33,7 +33,7 @@ class FailuresController < ApplicationController
     @failure = Failure.new(failure_params)
 
     if @failure.save
-      redirect_to root_path, notice: 'Failure Record was successfully created.'
+      redirect_to your_failures_path, notice: 'Failure Record was successfully created.'
     else
       render :new
     end
