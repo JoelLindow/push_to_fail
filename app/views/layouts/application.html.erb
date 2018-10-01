@@ -3,19 +3,20 @@
 <head>
   <title>PushToFail</title>
   <%= csrf_meta_tags %>
-
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
-
   <!-- Milligram Frontend Framework -->
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
   <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
   <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Sarpanch:900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rajdhani:300" rel="stylesheet">
 </head>
 <body>
   <nav class="navigation" style="background-color: orange;">
     <section class="container">
-      <a href="/about"  class="nav-button center-text">PUSH-TO-FAIL<img src="https://mbtskoudsalg.com/images/fail-png-6.png" class="nav-logo" alt=""></a>
+      <a href="/about"  class="nav-button center-text nav-logo-text">PUSH-TO-FAIL<img src="https://mbtskoudsalg.com/images/fail-png-6.png" class="nav-logo" alt=""></a>
       <ul class="navigation-list float-right">
         <% if current_user %>
         <!-- current_user will return true if a user is logged in -->

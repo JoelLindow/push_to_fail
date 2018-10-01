@@ -2,8 +2,9 @@ class FailuresController < ApplicationController
   before_action :set_failure, only: [:show, :edit, :update, :destroy]
 
   def about
-    #THIS IS FOR LINKS TO FEATURES AND DASHBOARDS
+    # THIS IS THE ROOT PAGE. ALSO ACCESSIBLE BY CLICKING THE BANNER LOGO
     #/dashboard/about
+    @new_user = User.last
   end
 
   def dashboard
