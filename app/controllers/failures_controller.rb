@@ -4,7 +4,6 @@ class FailuresController < ApplicationController
   def about
     # THIS IS THE ROOT PAGE. ALSO ACCESSIBLE BY CLICKING THE BANNER LOGO
     #/dashboard/about
-    @new_user = User.last
   end
 
   def dashboard
@@ -22,6 +21,8 @@ class FailuresController < ApplicationController
     else
       @failures = Failure.all.order(id: :desc)
     end
+    @new_user = User.last
+
   end
 
   # GET /failures/new

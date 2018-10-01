@@ -15,6 +15,7 @@
  */
 
  p {font-family: 'Rajdhani', sans-serif; font-size: 16px;}
+ hr.tiny-marg {margin-top: 3px; margin-bottom: 3px;}
 .nav-button {
   font-size: 24px;
   margin-right: 20px;
@@ -67,4 +68,8 @@
 }
 .newest-user-banner {
   font-family: 'Sarpanch', sans-serif;
+  margin-bottom: 10px;
+}
+.twenty-pix-top-marg {
+  margin-top: 20px;
 }

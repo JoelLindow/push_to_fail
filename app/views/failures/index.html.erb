@@ -1,13 +1,16 @@
-<!-- This is a complete record history for current user -->
-
-
-<% if @kind != nil %>
-<h1 class="center-text"><%= @kind + " Records" %></h1>
-
-<% else %>
-<h1 class="center-text"><%= "All Failure Records" %></h1>
-<% end %>
-
+<div class="row">
+  <div class="column">
+    <% if @kind != nil %>
+    <h1 class="center-text twenty-pix-top-marg"><%= @kind + " Records" %></h1>
+    <% else %>
+    <h1 class="center-text twenty-pix-top-marg"><%= "All Failure Records" %></h1>
+    <% end %>
+  </div>
+  <div class="column center-text">
+    <h3 class="about-header">OUR NEWEST MEMBER</h3>
+    <h2 class="newest-user-banner"><%= @new_user.name %></h2>
+  </div>
+</div>
 <section class="container">
   <table>
     <thead>
@@ -18,7 +21,6 @@
         <th>Date</th>
       </tr>
     </thead>
-
     <tbody>
       <% @failures.each do |failure| %>
       <% if failure.count > 0 %>
@@ -38,8 +40,6 @@
       <% end %>
     </tbody>
   </table>
-
   <br>
-
   <!-- <%= link_to 'New Failure', new_failure_path %> -->
 </section>
