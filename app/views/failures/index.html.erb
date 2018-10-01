@@ -1,17 +1,17 @@
-<div class="row">
-  <div class="column">
-    <% if @kind != nil %>
-    <h1 class="center-text twenty-pix-top-marg"><%= @kind + " Records" %></h1>
-    <% else %>
-    <h1 class="center-text twenty-pix-top-marg"><%= "All Failure Records" %></h1>
-    <% end %>
-  </div>
-  <div class="column center-text">
-    <h3 class="about-header">OUR NEWEST MEMBER</h3>
-    <h2 class="newest-user-banner"><%= @new_user.name %></h2>
-  </div>
-</div>
 <section class="container">
+  <div class="row">
+    <div class="column">
+      <% if @kind != nil %>
+      <h1 class="center-text twenty-pix-top-marg page-title"><%= @kind + " Records" %></h1>
+      <% else %>
+      <h1 class="center-text twenty-pix-top-marg page-title"><%= "All Failure Records" %></h1>
+      <% end %>
+    </div>
+    <div class="column center-text">
+      <h3 class="about-header">OUR NEWEST MEMBER</h3>
+      <h2 class="newest-user-banner"><%= @new_user.name %></h2>
+    </div>
+  </div>
   <table>
     <thead>
       <tr style="background-color: orange; color: white;">
