@@ -1,0 +1,41 @@
+<h1 class="center-text page-title">Your Top Records</h1>
+<section class="container">
+<table>
+  <thead>
+    <tr style="background-color: orange; color: white;">
+      <th>Category</th>
+      <th>Record</th>
+      <th>Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Pushup Record: </th>
+      <th><%= @pushup_record.count %></th>
+      <th><%= @pushup_record.created_at.getlocal.strftime('%B %d %Y') %></th>
+      <th><%= link_to "Community Pushup Records", failures_path(:kind => "Pushups") %></th>
+    </tr>
+    <tr>
+      <th>Situp Record:</th>
+      <th><%= @situp_record.count %></th>
+      <th><%= @situp_record.created_at.getlocal.strftime('%B %d %Y')%></th>
+      <th><%= link_to "Community Situp Records", failures_path(:kind => "Situps") %></th>
+    </tr>
+    <tr>
+      <th>Jumping Jack Record: </th>
+      <th><%= @jump_record.count %></th>
+      <th><%= @jump_record.created_at.getlocal.strftime('%B %d %Y') %></th>
+      <th><%= link_to "Community Jumping Jack Records", failures_path(:kind => "Jumping Jacks") %></th>
+    </tr>
+    <tr>
+      <th>Squat Record: </th>
+      <th><%= @squat_record.count %> </th>
+      <th><%= @squat_record.created_at.getlocal.strftime('%B %d %Y') %></th>
+      <th><%= link_to "Community Squats Records", failures_path(:kind => "Squats") %></th>
+    </tr>
+  </tbody>
+</table>
+</section>
+<br>
+<!-- <%= link_to 'New Failure', new_failure_path %> -->

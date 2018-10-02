@@ -3,25 +3,56 @@
 <head>
   <title>PushToFail</title>
   <%= csrf_meta_tags %>
-
-  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
-
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <!-- Milligram Frontend Framework -->
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
   <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
   <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
-</head>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Sarpanch:900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rajdhani:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 
+
+</head>
 <body>
   <nav class="navigation" style="background-color: orange;">
     <section class="container">
-      <a href="/"  class="nav-button">PUSH-TO-FAIL<img src="https://mbtskoudsalg.com/images/fail-png-6.png" class="nav-logo" alt=""></a>
-      <a href="/" class="nav-button"><strong>Top Records</strong></a>
-      <a href="/failures" class="nav-button"><strong>All Failures</strong></a>
-      <a href="/failures/new" class="nav-button"><strong>New Record</strong></a>
+      <a href="/about"  class="nav-button center-text nav-logo-text">PUSH-TO-FAIL<img src="https://mbtskoudsalg.com/images/fail-png-6.png" class="nav-logo" alt=""></a>
+      <ul class="navigation-list float-right">
+        <% if current_user %>
+        <!-- current_user will return true if a user is logged in -->
+        <%= "Logged in as #{current_user.name}" %> | <%= link_to 'Log Out', logout_path, method: :delete %>
+        <% else %>
+        <!-- not logged in -->
+        <%= link_to 'Log In', login_path %> or <%= link_to 'Sign Up', new_user_path %>
+        <% end %>
+      </ul>
+
+      <br>
+      <a href="/top_failures" class="nav-button"><strong>Top Scores</strong></a>
+      <a href="/recent_failures" class="nav-button"><strong>Recent Scores</strong></a>
+      <% if current_user %>
+      <!-- THIS SHOULD LINK TO /users/index.html.erb and shop a top score list for user. -->
+      <a href="/your_top_scores" class="nav-button"><strong>Your Dashboard</strong></a>
+      <a href="/your_failures" class="nav-button"><strong>Your Records</strong></a>
+      <a href="/failures/new" class="nav-button"><strong>New Entry</strong></a>
+      <% end %>
     </section>
   </nav>
+  <section class="container">
+
+    <% if notice %>
+    <br>
+    <%= notice %>
+    <% end %>
+
+    <% if alert %>
+    <br>
+    <%= alert %>
+    <% end %>
+  </section>
   <%= yield %>
 </body>
 </html>

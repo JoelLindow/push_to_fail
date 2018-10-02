@@ -1,0 +1,27 @@
+<h1 class="center-text twenty-pix-top-marg page-title">YOUR FAILURE SCORE HISTORY</h1>
+
+<section class="container">
+<table>
+  <thead>
+    <tr style="background-color: orange; color: white;">
+      <th>Type</th>
+      <th>Count</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @failures.each do |failure| %>
+      <tr>
+        <td><%= failure.kind %></td>
+        <td><%= failure.count %></td>
+        <td><%= failure.created_at.getlocal.strftime('%B %d %Y') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<!-- <%= link_to 'New Failure', new_failure_path %> -->
+</section>

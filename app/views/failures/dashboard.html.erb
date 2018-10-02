@@ -1,36 +1,108 @@
-<% if notice %>
-<h3 class="center-text" style="color:green;"><%= '*** - ' + notice + ' - ***'%></h3>
-<% end %>
-<h1 class="center-text">Failure Top Records</h1>
-<section class="container">
+<h1 class="center-text twenty-pix-top-marg page-title">Failure Top Scores</h1>
+<hr class="tiny-marg">
+<section class="high-score-container">
   <div class="row">
-    <div class="column center-text">
-      <h3>Pushups <br>Record</h3>
-      <h1><%= @pushup_record.count %></h1>
-      <h5><%= @pushup_record.created_at.getlocal.strftime('%B %d %Y') %></h5>
+    <div class="column center-text border-top-scores">
+      <h3 class="tight-top-bottom orange-back">Pushups</h3>
+      <table>
+        <tr>
+          <th>Count</th>
+          <th>User</th>
+          <th>When</th>
+        </tr>
+        <% @pushup_records.each do |x| %>
+        <tr>
+          <td class="center-text"><strong> <%= x.count %> </strong></td>
+          <% if current_user == nil %>
+          <td><%= x.user.name %></td>
+          <% elsif x.user.id == current_user.id %>
+          <td style="color:red;"><%= x.user.name %></td>
+          <% else %>
+          <td><%= x.user.name %></td>
+          <% end %>
+          <td><%= x.created_at.getlocal.strftime('%b %d %Y')%></td>
+        </tr>
+        <% end %>
+      </table>
       <th><%= link_to "All Pushup Records", failures_path(:kind => "Pushups") %></th>
     </div>
-    <div class="column center-text">
-      <h3>Situps <br>Record</h3>
-      <h1><%= @situp_record.count %></h1>
-      <h5><%= @situp_record.created_at.getlocal.strftime('%B %d %Y')%></h5>
+    <div class="column center-text border-top-scores">
+      <h3 class="tight-top-bottom orange-back">Situps</h3>
+      <table>
+        <tr>
+          <th>Count</th>
+          <th>User</th>
+          <th>When</th>
+        </tr>
+        <% @situp_records.each do |x| %>
+        <tr>
+          <td class="center-text"><strong> <%= x.count %> </strong></td>
+          <% if current_user == nil %>
+          <td><%= x.user.name %></td>
+          <% elsif x.user.id == current_user.id %>
+          <td style="color:red;"><%= x.user.name %></td>
+          <% else %>
+          <td><%= x.user.name %></td>
+          <% end %>
+          <td><%= x.created_at.getlocal.strftime('%b %d %Y')%></td>
+        </tr>
+        <% end %>
+      </table>
       <th><%= link_to "All Situp Records", failures_path(:kind => "Situps") %></th>
     </div>
-    <div class="column center-text">
-      <h3>Jumping Jack <br>Record</h3>
-      <h1><%= @jump_record.count %></h1>
-      <h5><%= @jump_record.created_at.getlocal.strftime('%B %d %Y') %></h5>
+    <div class="column center-text border-top-scores">
+      <h3 class="tight-top-bottom orange-back">Squats</h3>
+      <table>
+        <tr>
+          <th>Count</th>
+          <th>User</th>
+          <th>When</th>
+        </tr>
+        <% @squat_records.each do |x| %>
+        <tr>
+          <td class="center-text"><strong> <%= x.count %> </strong></td>
+          <% if current_user == nil %>
+          <td><%= x.user.name %></td>
+          <% elsif x.user.id == current_user.id %>
+          <td style="color:red;"><%= x.user.name %></td>
+          <% else %>
+          <td><%= x.user.name %></td>
+          <% end %>
+          <td><%= x.created_at.getlocal.strftime('%b %d %Y')%></td>
+        </tr>
+        <% end %>
+      </table>
+      <th><%= link_to "All Squat Records", failures_path(:kind => "Squats") %></th>
+      </div>
+    <div class="column center-text border-top-scores">
+      <h3 class="tight-top-bottom orange-back">Jumping Jack</h3>
+      <table>
+        <tr>
+          <th>Count</th>
+          <th>User</th>
+          <th>When</th>
+        </tr>
+        <% @jump_records.each do |x| %>
+        <tr>
+          <td class="center-text"><strong> <%= x.count %> </strong></td>
+          <% if current_user == nil %>
+          <td><%= x.user.name %></td>
+          <% elsif x.user.id == current_user.id %>
+          <td style="color:red;"><%= x.user.name %></td>
+          <% else %>
+          <td><%= x.user.name %></td>
+          <% end %>
+          <td><%= x.created_at.getlocal.strftime('%b %d %Y')%></td>
+        </tr>
+        <% end %>
+      </table>
       <th><%= link_to "All Jumping Jack Records", failures_path(:kind => "Jumping Jacks") %></th>
     </div>
-    <div class="column center-text">
-      <h3>Squats <br>Record</h3>
-      <h1><%= @squat_record.count %> </h1>
-      <h5><%= @squat_record.created_at.getlocal.strftime('%B %d %Y') %></h5>
-      <th><%= link_to "All Squats Records", failures_path(:kind => "Squats") %></th>
+
+
+
     </div>
   </div>
 </section>
 
 <br>
-
-<!-- <%= link_to 'New Failure', new_failure_path %> -->

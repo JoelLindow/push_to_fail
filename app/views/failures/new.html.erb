@@ -1,4 +1,5 @@
 <section class="container">
+  <% if current_user %>
   <h1 class="center-text">New Failure Entry</h1>
 
   <section class="container">
@@ -6,4 +7,7 @@
     <%= render 'form', failure: @failure %>
 
   </section>
+  <% else  %>
+  <h1 class="center-text">PLEASE LOG IN OR<br>CREATE AN ACCOUNT</h1>
+  <% end %>
 </section>

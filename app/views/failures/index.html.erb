@@ -1,35 +1,45 @@
-<% if @kind != nil %>
-<h1 class="center-text"><%= @kind + " Records" %></h1>
-<% else %>
-<h1 class="center-text"><%= "All Failure Records" %></h1>
-<% end %>
-
 <section class="container">
-<table>
-  <thead>
-    <tr style="background-color: orange; color: white;">
-      <th>Type</th>
-      <th>Count</th>
-      <th>Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @failures.each do |failure| %>
+  <div class="row">
+    <div class="column">
+      <% if @kind != nil %>
+      <h1 class="center-text twenty-pix-top-marg page-title"><%= @kind + " Records" %></h1>
+      <% else %>
+      <h1 class="center-text twenty-pix-top-marg page-title"><%= "All Failure Records" %></h1>
+      <% end %>
+    </div>
+    <div class="column center-text">
+      <h3 class="about-header">OUR NEWEST MEMBER</h3>
+      <h2 class="newest-user-banner"><%= @new_user.name %></h2>
+    </div>
+  </div>
+  <table>
+    <thead>
+      <tr style="background-color: orange; color: white;">
+        <th>Type</th>
+        <th>Count</th>
+        <th>User</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @failures.each do |failure| %>
+      <% if failure.count > 0 %>
       <tr>
         <td><%= failure.kind %></td>
         <td><%= failure.count %></td>
+        <% if current_user == nil %>
+        <td><%= failure.user.name %></td>
+        <% elsif failure.user.id == current_user.id %>
+        <td style="color:red;"><strong> <%= failure.user.name %> </strong></td>
+        <% else %>
+        <td><%= failure.user.name %></td>
+        <% end %>
         <td><%= failure.created_at.getlocal.strftime('%B %d %Y') %></td>
-        <!-- <td><%= link_to 'Show', failure %></td> -->
-        <!-- <td><%= link_to 'Edit', edit_failure_path(failure) %></td> -->
-        <!-- <td><%= link_to 'Destroy', failure, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<!-- <%= link_to 'New Failure', new_failure_path %> -->
+      <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <!-- <%= link_to 'New Failure', new_failure_path %> -->
 </section>
