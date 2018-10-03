@@ -1,34 +1,34 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
 
- p {font-family: 'Rajdhani', sans-serif; font-size: 16px;}
- hr.tiny-marg {margin-top: 3px; margin-bottom: 3px;}
+p {font-family: 'Lato', sans-serif; font-size: 16px;}
+hr.tiny-marg {margin-top: 3px; margin-bottom: 3px;}
 .nav-button {
   font-size: 24px;
   margin-right: 20px;
   color: white;
 }
 .nav-logo-text {
-  font-size: 40px;
-  font-family: 'Sarpanch', sans-serif;
+  font-size: 46px;
+  font-family: 'Russo One', sans-serif;
 }
 .nav-logo {
-  height: 30px;
+  height: 35px;
   margin-right: 24px;
-  margin-bottom: -5px;
+  margin-bottom: -2px;
 }
 .center-text {
   text-align: center;
@@ -62,7 +62,7 @@
   margin-right: 15px;
 }
 .about-header {
-  font-family: 'Sarpanch', sans-serif;
+  font-family: 'Russo One', sans-serif;
   margin-bottom: 3px;
   color: #4286f4;
 }
@@ -75,4 +75,16 @@
 }
 .page-title{
   font-family: 'Anton', sans-serif;
+}
+.alert-chip {
+  background-color: green;
+  color: white;
+  font-family: 'Russo One', sans-serif;
+  font-size: 24px;
+}
+.notice-chip {
+  background-color: green;
+  color: white;
+  font-family: 'Russo One', sans-serif;
+  font-size: 24px;
 }
