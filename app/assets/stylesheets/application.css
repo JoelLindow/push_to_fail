@@ -21,6 +21,21 @@ hr.tiny-marg {margin-top: 3px; margin-bottom: 3px;}
   margin-right: 20px;
   color: white;
 }
+td.light-table-pad{
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+th.light-table-pad{
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+table.light-table-pad{
+    margin-bottom: 4px;
+}
+a.visited {
+  color: orange;
+  font-size: 20px;
+}
 .nav-logo-text {
   font-size: 46px;
   font-family: 'Russo One', sans-serif;
@@ -45,7 +60,6 @@ hr.tiny-marg {margin-top: 3px; margin-bottom: 3px;}
   border-color: lightgrey;
   margin-left: 1%;
   margin-right: 1%;
-  padding-top:
 }
 .tight-top-bottom {
   margin-top: 1px;
@@ -55,6 +69,8 @@ hr.tiny-marg {margin-top: 3px; margin-bottom: 3px;}
   margin-top: 5px;
   background-color: whitesmoke;
   border-radius: 5px;
+  font-weight: bold;
+
 }
 .about-link {
   font-family: 'Sarpanch', sans-serif;
@@ -77,14 +93,24 @@ hr.tiny-marg {margin-top: 3px; margin-bottom: 3px;}
   font-family: 'Anton', sans-serif;
 }
 .alert-chip {
-  background-color: green;
+  background-color: red;
   color: white;
   font-family: 'Russo One', sans-serif;
-  font-size: 24px;
+  font-size: 27px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 2px;
+  border-radius: 6px;
+  height: 40px;
 }
 .notice-chip {
   background-color: green;
   color: white;
   font-family: 'Russo One', sans-serif;
-  font-size: 24px;
+  font-size: 27px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 2px;
+  border-radius: 6px;
+  height: 40px;
 }
