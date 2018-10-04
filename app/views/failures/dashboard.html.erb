@@ -4,99 +4,99 @@
   <div class="row">
     <div class="column center-text border-top-scores">
       <h3 class="tight-top-bottom orange-back">Pushups</h3>
-      <table>
+      <%= link_to "See All Records", failures_path(:kind => "Pushups"), class: "visited"%>
+      <table class="light-table-pad">
         <tr>
-          <th>Count</th>
-          <th>User</th>
-          <th>When</th>
+          <th class="light-table-pad">Count</th>
+          <th class="light-table-pad">User</th>
+          <th class="light-table-pad">When</th>
         </tr>
         <% @pushup_records.each do |x| %>
         <tr>
-          <td class="center-text"><strong> <%= x.count %> </strong></td>
+          <td class="center-text light-table-pad"><strong> <%= x.count %> </strong></td>
           <% if current_user == nil %>
-          <td><%= x.user.name %></td>
+          <td class="light-table-pad"><%= x.user.name %></td>
           <% elsif x.user.id == current_user.id %>
-          <td style="color:red;"><%= x.user.name %></td>
+          <td class="light-table-pad" style="color:red;"><%= x.user.name %></td>
           <% else %>
-          <td><%= x.user.name %></td>
+          <td class="light-table-pad"><%= x.user.name %></td>
           <% end %>
-          <td><%= x.created_at.getlocal.strftime('%b %d %Y')%></td>
+          <td class="light-table-pad"><%= x.created_at.getlocal.strftime('%b %d %Y')%></td>
         </tr>
         <% end %>
       </table>
-      <th><%= link_to "All Pushup Records", failures_path(:kind => "Pushups") %></th>
     </div>
     <div class="column center-text border-top-scores">
       <h3 class="tight-top-bottom orange-back">Situps</h3>
-      <table>
+      <%= link_to "See All Records", failures_path(:kind => "Situps"), class: "visited" %>
+      <table class="light-table-pad">
         <tr>
-          <th>Count</th>
-          <th>User</th>
-          <th>When</th>
+          <th class="light-table-pad">Count</th>
+          <th class="light-table-pad">User</th>
+          <th class="light-table-pad">When</th>
         </tr>
         <% @situp_records.each do |x| %>
         <tr>
-          <td class="center-text"><strong> <%= x.count %> </strong></td>
+          <td class="center-text light-table-pad"><strong> <%= x.count %> </strong></td>
           <% if current_user == nil %>
-          <td><%= x.user.name %></td>
+          <td class="light-table-pad"><%= x.user.name %></td>
           <% elsif x.user.id == current_user.id %>
-          <td style="color:red;"><%= x.user.name %></td>
+          <td class="light-table-pad" style="color:red;"><%= x.user.name %></td>
           <% else %>
-          <td><%= x.user.name %></td>
+          <td class="light-table-pad"><%= x.user.name %></td>
           <% end %>
-          <td><%= x.created_at.getlocal.strftime('%b %d %Y')%></td>
+          <td class="light-table-pad"><%= x.created_at.getlocal.strftime('%b %d %Y')%></td>
         </tr>
         <% end %>
       </table>
-      <th><%= link_to "All Situp Records", failures_path(:kind => "Situps") %></th>
     </div>
     <div class="column center-text border-top-scores">
       <h3 class="tight-top-bottom orange-back">Squats</h3>
-      <table>
+      <%= link_to "See All Records", failures_path(:kind => "Squats"), class: "visited" %>
+      <table class="light-table-pad">
         <tr>
-          <th>Count</th>
-          <th>User</th>
-          <th>When</th>
+          <th class="light-table-pad">Count</th>
+          <th class="light-table-pad">User</th>
+          <th class="light-table-pad">When</th>
         </tr>
         <% @squat_records.each do |x| %>
         <tr>
-          <td class="center-text"><strong> <%= x.count %> </strong></td>
+          <td class="center-text light-table-pad"><strong> <%= x.count %> </strong></td>
           <% if current_user == nil %>
-          <td><%= x.user.name %></td>
+          <td class="light-table-pad"><%= x.user.name %></td>
           <% elsif x.user.id == current_user.id %>
-          <td style="color:red;"><%= x.user.name %></td>
+          <td class="light-table-pad" style="color:red;"><%= x.user.name %></td>
           <% else %>
-          <td><%= x.user.name %></td>
+          <td class="light-table-pad"><%= x.user.name %></td>
           <% end %>
-          <td><%= x.created_at.getlocal.strftime('%b %d %Y')%></td>
+          <td class="light-table-pad"><%= x.created_at.getlocal.strftime('%b %d %Y')%></td>
         </tr>
         <% end %>
       </table>
-      <th><%= link_to "All Squat Records", failures_path(:kind => "Squats") %></th>
       </div>
     <div class="column center-text border-top-scores">
       <h3 class="tight-top-bottom orange-back">Jumping Jack</h3>
-      <table>
+      <%= link_to "See All Records", failures_path(:kind => "Jumping Jacks"), class: "visited" %>
+      <table class="light-table-pad">
         <tr>
-          <th>Count</th>
-          <th>User</th>
-          <th>When</th>
+          <th class="light-table-pad">Count</th>
+          <th class="light-table-pad">User</th>
+          <th class="light-table-pad">When</th>
         </tr>
         <% @jump_records.each do |x| %>
         <tr>
-          <td class="center-text"><strong> <%= x.count %> </strong></td>
+          <td class="center-text light-table-pad"><strong> <%= x.count %> </strong></td>
           <% if current_user == nil %>
-          <td><%= x.user.name %></td>
+          <td class="light-table-pad"><%= x.user.name %></td>
           <% elsif x.user.id == current_user.id %>
-          <td style="color:red;"><%= x.user.name %></td>
+          <td class="light-table-pad" style="color:red;"><%= x.user.name %></td>
           <% else %>
-          <td><%= x.user.name %></td>
+          <td class="light-table-pad"><%= x.user.name %></td>
           <% end %>
-          <td><%= x.created_at.getlocal.strftime('%b %d %Y')%></td>
+          <td class="light-table-pad"><%= x.created_at.getlocal.strftime('%b %d %Y')%></td>
         </tr>
         <% end %>
       </table>
-      <th><%= link_to "All Jumping Jack Records", failures_path(:kind => "Jumping Jacks") %></th>
     </div>
 
 
