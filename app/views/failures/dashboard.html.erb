@@ -1,17 +1,23 @@
+<!-- This page is tied to  /top_failures -->
 <h1 class="center-text twenty-pix-top-marg page-title">Failure Top Scores</h1>
 <hr class="tiny-marg">
 <section class="high-score-container">
   <div class="row">
+
+
+    <% @top_scores_payload.each do |k,v| %>
+
     <div class="column center-text border-top-scores">
-      <h3 class="tight-top-bottom orange-back">Pushups</h3>
-      <%= link_to "See All Records", failures_path(:kind => "Pushups"), class: "visited"%>
+      <h3 class="tight-top-bottom orange-back"><%= k.to_s %></h3>
+      <%= link_to "See All Records", failures_path(:kind => k), class: "visited"%>
       <table class="light-table-pad">
         <tr>
           <th class="light-table-pad">Count</th>
           <th class="light-table-pad">User</th>
           <th class="light-table-pad">When</th>
         </tr>
-        <% @pushup_records.each do |x| %>
+
+        <% v.each do |x| %>
         <tr>
           <td class="center-text light-table-pad"><strong> <%= x.count %> </strong></td>
           <% if current_user == nil %>
@@ -26,83 +32,12 @@
         <% end %>
       </table>
     </div>
-    <div class="column center-text border-top-scores">
-      <h3 class="tight-top-bottom orange-back">Situps</h3>
-      <%= link_to "See All Records", failures_path(:kind => "Situps"), class: "visited" %>
-      <table class="light-table-pad">
-        <tr>
-          <th class="light-table-pad">Count</th>
-          <th class="light-table-pad">User</th>
-          <th class="light-table-pad">When</th>
-        </tr>
-        <% @situp_records.each do |x| %>
-        <tr>
-          <td class="center-text light-table-pad"><strong> <%= x.count %> </strong></td>
-          <% if current_user == nil %>
-          <td class="light-table-pad"><%= x.user.name %></td>
-          <% elsif x.user.id == current_user.id %>
-          <td class="light-table-pad" style="color:red;"><%= x.user.name %></td>
-          <% else %>
-          <td class="light-table-pad"><%= x.user.name %></td>
-          <% end %>
-          <td class="light-table-pad"><%= x.created_at.getlocal.strftime('%b %d %Y')%></td>
-        </tr>
-        <% end %>
-      </table>
-    </div>
-    <div class="column center-text border-top-scores">
-      <h3 class="tight-top-bottom orange-back">Squats</h3>
-      <%= link_to "See All Records", failures_path(:kind => "Squats"), class: "visited" %>
-      <table class="light-table-pad">
-        <tr>
-          <th class="light-table-pad">Count</th>
-          <th class="light-table-pad">User</th>
-          <th class="light-table-pad">When</th>
-        </tr>
-        <% @squat_records.each do |x| %>
-        <tr>
-          <td class="center-text light-table-pad"><strong> <%= x.count %> </strong></td>
-          <% if current_user == nil %>
-          <td class="light-table-pad"><%= x.user.name %></td>
-          <% elsif x.user.id == current_user.id %>
-          <td class="light-table-pad" style="color:red;"><%= x.user.name %></td>
-          <% else %>
-          <td class="light-table-pad"><%= x.user.name %></td>
-          <% end %>
-          <td class="light-table-pad"><%= x.created_at.getlocal.strftime('%b %d %Y')%></td>
-        </tr>
-        <% end %>
-      </table>
-      </div>
-    <div class="column center-text border-top-scores">
-      <h3 class="tight-top-bottom orange-back">Jumping Jack</h3>
-      <%= link_to "See All Records", failures_path(:kind => "Jumping Jacks"), class: "visited" %>
-      <table class="light-table-pad">
-        <tr>
-          <th class="light-table-pad">Count</th>
-          <th class="light-table-pad">User</th>
-          <th class="light-table-pad">When</th>
-        </tr>
-        <% @jump_records.each do |x| %>
-        <tr>
-          <td class="center-text light-table-pad"><strong> <%= x.count %> </strong></td>
-          <% if current_user == nil %>
-          <td class="light-table-pad"><%= x.user.name %></td>
-          <% elsif x.user.id == current_user.id %>
-          <td class="light-table-pad" style="color:red;"><%= x.user.name %></td>
-          <% else %>
-          <td class="light-table-pad"><%= x.user.name %></td>
-          <% end %>
-          <td class="light-table-pad"><%= x.created_at.getlocal.strftime('%b %d %Y')%></td>
-        </tr>
-        <% end %>
-      </table>
-    </div>
+    <% end %>
 
 
 
-    </div>
   </div>
+</div>
 </section>
 
 <br>

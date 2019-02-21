@@ -8,10 +8,28 @@ class FailuresController < ApplicationController
 
   def dashboard
     # THIS IS FOR ALL USER FAILURES TOP SCORE PAGE /failures/index.html.erb
-    @pushup_records = Failure.where(kind: "Pushups").order(count: :desc).first(15)
-    @situp_records = Failure.where(kind: "Situps").order(count: :desc).first(15)
-    @jump_records = Failure.where(kind: "Jumping Jacks").order(count: :desc).first(15)
-    @squat_records = Failure.where(kind: "Squats").order(count: :desc).first(15)
+    # @pushup_records = Failure.where(kind: "Pushups").order(count: :desc).first(15)
+    # @situp_records = Failure.where(kind: "Situps").order(count: :desc).first(15)
+    # @jump_records = Failure.where(kind: "Jumping Jacks").order(count: :desc).first(15)
+    # @squat_records = Failure.where(kind: "Squats").order(count: :desc).first(15)
+
+
+    workout_names = Kind.all.pluck(:name)
+
+    @top_scores_payload = {}
+
+    workout_names.each do |x|
+      @top_scores_payload[x] = Failure.includes(:kind).where("kinds.name"=> x).order(count: :desc).first(15)
+      # binding.pry
+    end
+    # @knee_pushups = Kind.where(name: "Knee Pushups").order(count: :desc).first(15)
+    # @situp_records = Kind.where(name: "Situps").order(count: :desc).first(15)
+    # @crunch_records = Kind.where(name: "Crunches").order(count: :desc).first(15)
+    # @jumping_jack_records = Kind.where(name: "Jumping Jacks").order(count: :desc).first(15)
+    # @squat_records = Kind.where(name: "Squats").order(count: :desc).first(15)
+
+
+
   end
 
   def index
