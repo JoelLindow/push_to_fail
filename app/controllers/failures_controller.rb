@@ -46,11 +46,14 @@ class FailuresController < ApplicationController
   # GET /failures/new
   def new
     @failure = Failure.new
+    @kinds = Kind.all.pluck(:name)
   end
 
 
   def create
     @failure = Failure.new(failure_params)
+    @failure.kind = Kind.find_by(name: params["failure"]["kind"])
+
 
     if @failure.save
       redirect_to your_failures_path, notice: 'Failure Record was successfully created.'
@@ -73,6 +76,6 @@ class FailuresController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def failure_params
-    params.require(:failure).permit(:kind, :count, :user_id)
+    params.require(:failure).permit(:count, :user_id, :kind_id)
   end
 end
